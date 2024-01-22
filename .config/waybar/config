@@ -1,0 +1,99 @@
+{
+    "position": "top",
+    "layer": "top",
+    "height": 10,
+    "margin-top": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "spacing": 0,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["cpu", "memory", "temperature", "disk", "network"],
+    "modules-right": ["pulseaudio", "battery", "tray", "clock"],
+    
+    // MODULES LEFT
+	"hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": "󰧞",
+            "sort-by-number": true
+        }
+    },
+
+    // MODULES CENTER
+    "cpu": {
+      "format": "󰻠 {usage}%",
+      "format-alt": "󰻠 {avg_frequency} GHz",
+      "interval": 5
+    },
+
+    "memory": {
+      "format": "󰍛 {}%",
+      "format-alt": "󰍛 {used}/{total} GiB",
+      "interval": 5
+    },
+
+    "disk": {
+      "format": "󰋊 {}%",
+      "format-alt": "󰋊 {used}/{total} GiB",
+      "interval": 5,
+      "path": "/home"
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+    },
+
+    // MODULES RIGHT
+	"tray": {
+		"icon-size": 16,
+		"spacing": 5
+	},
+
+    "network": {
+        "format-wifi": "{bandwidthTotalBytes}",
+        "format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "format-linked": "(No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "speedtest-go",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+        }
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-full": "full",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+    }
+}

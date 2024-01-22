@@ -1,0 +1,4 @@
+[default]
+path = "~/repo/wallp/nature"
+duration = "30m"
+sorting = "random"

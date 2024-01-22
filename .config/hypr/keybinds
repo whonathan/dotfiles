@@ -1,0 +1,83 @@
+$mod            = super
+$wallp          = exec, wpaperd
+$browser        = exec, firefox
+$term           = exec, alacritty
+$launcher       = exec, wofi --show drun
+$bar            = exec, pkill -SIGUSR1 '^waybar$'
+$bright_up      = exec, brightnessctl s +2%
+$bright_down    = exec, brightnessctl s 2%-
+$audio_up       = exec, pactl set-sink-volume @DEFAULT_SINK@ +2%
+$audio_down     = exec, pactl set-sink-volume @DEFAULT_SINK@ -2%
+$audio_mute     = exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+$audio_mic_mute = exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bind = $mod,s,togglegroup
+bind = $modALT, J, changegroupactive, f
+bind = $modALT, K, changegroupactive, b
+bind = $mod SHIFT, h, movewindoworgroup, l
+bind = $mod SHIFT, l, movewindoworgroup, r
+bind = $mod SHIFT, k, movewindoworgroup, u
+bind = $mod SHIFT, j, movewindoworgroup, d
+
+bind	= $mod, w, $wallp
+bind	= $mod, b, $browser
+bind	= $mod, v, exec, code
+bind	= $mod, return, $term
+bind	= $mod, space, $launcher
+bind	= $mod, apostrophe, $bar
+
+bind	= $mod, q, killactive
+bind	= $mod, f, fullscreen
+bind	= $mod, d, togglesplit
+bind	= $mod, a, togglefloating
+bind	= $mod, delete, exit
+
+bind	= $mod, h, movefocus, l
+bind	= $mod, l, movefocus, r
+bind	= $mod, k, movefocus, u
+bind	= $mod, j, movefocus, d
+
+bind	= $mod shift, h, movewindow,l
+bind	= $mod shift, l, movewindow,r
+bind	= $mod shift, k, movewindow,u
+bind	= $mod shift, j, movewindow,d
+
+binde = $mod ctrl, h, resizeactive,-20 0
+binde = $mod ctrl, l, resizeactive,20 0
+binde = $mod ctrl, k, resizeactive,0 -20
+binde = $mod ctrl, j, resizeactive,0 20
+
+bind	= $mod, 1, workspace, 1
+bind	= $mod, 2, workspace, 2
+bind	= $mod, 3, workspace, 3
+bind	= $mod, 4, workspace, 4
+bind	= $mod, 5, workspace, 5
+bind	= $mod, 6, workspace, 6
+bind	= $mod, 7, workspace, 7
+bind	= $mod, 8, workspace, 8
+bind	= $mod, 9, workspace, 9
+bind	= $mod, 0, workspace, 10
+
+bind	= $mod shift, 1, movetoworkspace, 1
+bind	= $mod shift, 2, movetoworkspace, 2
+bind	= $mod shift, 3, movetoworkspace, 3
+bind	= $mod shift, 4, movetoworkspace, 4
+bind	= $mod shift, 5, movetoworkspace, 5
+bind	= $mod shift, 6, movetoworkspace, 6
+bind	= $mod shift, 7, movetoworkspace, 7
+bind	= $mod shift, 8, movetoworkspace, 8
+bind	= $mod shift, 9, movetoworkspace, 9
+bind	= $mod shift, 0, movetoworkspace, 10
+
+bindm = $mod, mouse:272, movewindow
+bindm = $mod, mouse:273, resizewindow
+
+bind = $mod, bracketleft, layoutmsg, preselect l
+bind = $mod, bracketright, layoutmsg, preselect r
+
+binde = ,XF86MonBrightnessUp, $bright_up
+binde = ,XF86MonBrightnessDown, $bright_down
+binde = ,XF86AudioRaiseVolume, $audio_up
+binde = ,XF86AudioLowerVolume, $audio_down
+bind	= ,XF86AudioMute, $audio_mute
+bind	= ,XF86AudioMicMute, $audio_mic_mute

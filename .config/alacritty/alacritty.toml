@@ -1,0 +1,34 @@
+import = ["/home/x/.config/alacritty/colorscheme.toml"]
+
+[shell]
+program = "/usr/bin/fish"
+
+[window]
+decorations = "none"
+opacity = 0.9
+
+[scrolling]
+history = 100000
+multiplier = 8
+
+[selection]
+save_to_clipboard = true
+
+[font]
+size = 14
+
+[font.normal]
+family = "JetBrainsMonoNL NF"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMonoNL NF"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMonoNL NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMonoNL NF"
+style = "Bold Italic"
