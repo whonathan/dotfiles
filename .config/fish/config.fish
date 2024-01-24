@@ -31,7 +31,7 @@ alias aurul 'aur -Qua'
 alias auru  'aur -Sua' 
 
 alias v 'nvim'
-alias Umirrors 'sudo reflector -c Indonesia -l 10 --sort rate --save /etc/pacman.d/mirrorlist'
+alias upmir 'sudo reflector -c Indonesia -l 10 --sort rate --save /etc/pacman.d/mirrorlist'
 alias gr 'git commit -am "$(tr -dc 'a-z0-9' < /dev/urandom | head -c 8)" && git push'
 
 # GIT
