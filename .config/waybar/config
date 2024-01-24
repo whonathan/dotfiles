@@ -9,7 +9,7 @@
     "spacing": 0,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["cpu", "memory", "temperature", "disk", "network"],
-    "modules-right": ["pulseaudio", "battery", "tray", "clock"],
+    "modules-right": ["tray", "pulseaudio", "battery","clock"],
     
     // MODULES LEFT
 	"hyprland/workspaces": {
