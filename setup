@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+mkdir ~/repo &>/dev/null
+cd ~/repo
+git clone https://github.com/whonathan/dotfiles.git
+
+paths=(
+    ".config/alacritty"
+    ".config/tmux"
+    ".config/nvim"
+    ".config/hypr"
+    ".config/waybar"
+    ".config/starship.toml"
+    ".local/bin/packer"
+    ".local/bin/udf"
+)
+
+for path in "${paths[@]}"; do
+    full_path=~/"$path"
+    if [ -e "$full_path" ]; then
+        if [ -d "$full_path" ]; then
+            rm -fr "$full_path"
+        elif [ -f "$full_path" ]; then
+            rm -f "$full_path"
+        fi
+    fi
+    ln -fs ~/repo/dotfiles/"$path" "$full_path"
+done
