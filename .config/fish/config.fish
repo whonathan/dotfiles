@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 set -x PATH $PATH $HOME/.local/bin
+set -x LIBVIRT_DEFAULT_URI 'qemu:///system'
 
 set fish_greeting
 fish_vi_key_bindings

@@ -1,62 +1,76 @@
 #!/usr/bin/env bash
 
 utils=(
-  mesa
-  vulkan-intel
-  intel-media-driver
-  libva-intel-driver
-  pipewire
-  pipewire-alsa
-  pipewire-jack
-  pipewire-pulse
-  gst-plugin-pipewire
-  libpulse
-  wireplumber
-  noto-fonts
-  noto-fonts-emoji
-  noto-fonts-cjk
-  ttf-jetbrains-mono-nerd
-  pacman-contrib
-  fish
-  tmux
-  starship
-  neovim
-  man-db
-  git
-  eza
-  duf
+    mesa
+    vulkan-intel
+    intel-media-driver
+    libva-intel-driver
+    pipewire
+    pipewire-alsa
+    pipewire-jack
+    pipewire-pulse
+    gst-plugin-pipewire
+    libpulse
+    wireplumber
+    noto-fonts
+    noto-fonts-emoji
+    noto-fonts-cjk
+    ttf-jetbrains-mono-nerd
+    pacman-contrib
+    fish
+    tmux
+    starship
+    neovim
+    man-db
+    git
+    eza
+    duf
 )
 
 hyprland=(
-  sway
-  hyprland
-  xdg-desktop-portal-wlr
-  xdg-desktop-portal-hyprland
-  polkit-gnome
-  brightnessctl
-  wl-clipboard
-  xorg-xhost
-  xorg-xwayland
-  egl-wayland
-  qt5-wayland
-  qt6-wayland
-  alacritty
-  waybar
-  wofi
-  firefox
+    sway
+    hyprland
+    xdg-desktop-portal-wlr
+    xdg-desktop-portal-hyprland
+    polkit-gnome
+    brightnessctl
+    wl-clipboard
+    xorg-xhost
+    xorg-xwayland
+    egl-wayland
+    qt5-wayland
+    qt6-wayland
+    alacritty
+    waybar
+    wofi
+    firefox
+)
+
+aqemu=(
+    qemu-base
+    libvirt
+    virt-install
+    virt-manager
+    virt-viewer
+    edk2-ovmf
+    swtpm
+    qemu-img
+    guestfs-tools
+    libosinfo
+    tuned
+    dnsmasq
 )
 
 qemu=(
-  qemu-full
-  libguestfs
-  virt-viewer
-  virt-manager
-  vde2
-  ebtables
-  dnsmasq
-  bridge-utils
-  openbsd-netcat
-  dmidecode
+    qemu-full
+    libguestfs
+    virt-viewer
+    virt-manager
+    vde2
+    ebtables
+    bridge-utils
+    openbsd-netcat
+    dmidecode
 )
 
 for arr in $@; do
@@ -66,4 +80,4 @@ for arr in $@; do
     qemu)     pkg+=(${qemu[@]});;
   esac
 done
-sudo pacman -S ${pkg[@]}
+paru -S ${pkg[@]}
