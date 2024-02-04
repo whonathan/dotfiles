@@ -1,9 +1,10 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+source ~/.config/fish/rtr-mac
 
-set -x PATH $PATH $HOME/.local/bin
-set -x LIBVIRT_DEFAULT_URI 'qemu:///system'
+set PATH $PATH $HOME/.local/bin
+set LIBVIRT_DEFAULT_URI 'qemu:///system'
 
 set fish_greeting
 fish_vi_key_bindings
