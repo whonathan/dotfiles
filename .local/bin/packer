@@ -69,6 +69,7 @@ for arr in $@; do
     utils)    pkg+=(${utils[@]});;
     hyprland) pkg+=(${hyprland[@]});;
     vm)       pkg+=(${vm[@]});;
+    virt)     pkg+=(${virt[@]});;
   esac
 done
 paru -Sy --needed ${pkg[@]}
