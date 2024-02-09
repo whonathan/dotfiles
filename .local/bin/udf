@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 curdir="$(pwd)"
-dfdir="~/repo/dotfiles"
+dfdir="$HOME/repo/dotfiles"
 
 cd $dfdir
 git pull origin main
