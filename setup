@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-mkdir ~/repo &>/dev/null
-cd ~/repo
+directories=(~/.local ~/.config ~/repo)
+
+for dir in "${directories[@]}"; do
+    if [ ! -d "$dir" ]; then
+        mkdir -p "$dir"
+    fi
+done
+
+cd "$repo_dir" || exit
+
 git clone https://github.com/whonathan/dotfiles.git
 
 paths=(
@@ -24,5 +32,5 @@ for path in "${paths[@]}"; do
             rm -f "$full_path"
         fi
     fi
-    ln -fs ~/repo/dotfiles/"$path" "$full_path"
+    ln -fs "$repo_dir"/dotfiles/"$path" "$full_path"
 done
