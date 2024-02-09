@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-directories=(~/.local ~/.config ~/repo)
+directories=(~/.local/bin ~/.config ~/repo)
 
 for dir in "${directories[@]}"; do
     if [ ! -d "$dir" ]; then
@@ -8,6 +8,7 @@ for dir in "${directories[@]}"; do
     fi
 done
 
+repo_dir=~/repo
 cd "$repo_dir" || exit
 
 git clone https://github.com/whonathan/dotfiles.git
