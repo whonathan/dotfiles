@@ -35,3 +35,5 @@ for path in "${paths[@]}"; do
     fi
     ln -fs "$repo_dir"/dotfiles/"$path" "$full_path"
 done
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
