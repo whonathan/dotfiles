@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-directories=(~/.local/bin ~/.config ~/repo)
+directories=(~/repo ~/.config ~/.local/bin)
 
 for dir in "${directories[@]}"; do
     if [ ! -d "$dir" ]; then

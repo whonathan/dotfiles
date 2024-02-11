@@ -4,6 +4,7 @@ end
 source ~/.config/fish/rtr-mac
 
 set PATH $PATH $HOME/.local/bin
+set PATH $PATH $HOME/.cargo/bin
 set LIBVIRT_DEFAULT_URI 'qemu:///system'
 
 set fish_greeting
