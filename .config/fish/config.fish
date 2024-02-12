@@ -20,6 +20,7 @@ alias ll  'eza -as type'
 alias ls  'eza -ls type'
 alias lsa 'eza -las type'
 alias lst 'eza -T'
+alias lsg 'eza -glas type'
 
 alias aor   'sudo pacman'
 alias aors  'aor --noconfirm -S'
