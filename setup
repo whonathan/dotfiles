@@ -8,6 +8,7 @@ for dir in "${directories[@]}"; do
     fi
 done
 
+cur_dir=$(pwd)
 repo_dir=~/repo
 cd "$repo_dir" || exit
 
@@ -40,3 +41,5 @@ done
 
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+
+cd "$cur_dir"
