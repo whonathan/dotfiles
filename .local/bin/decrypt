@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <output_file> <file1> [<file2> ...]"
+    exit 1
+fi
+
+echo -n "Enter passphrase: "
+read -s PASSPHRASE
+echo
+
+for FILE in "${@:1}"; do
+    openssl enc -aes-256-cbc -d -pbkdf2 -pass pass:"$PASSPHRASE" -in "$FILE" -out ${FILE%.enc}
+    if [ $? -ne 0 ]; then
+        echo "Error decrypting file: $FILE"
+        exit 1
+    fi
+    echo "File decrypting: $FILE -> $1.${FILE}.enc"
+done
+
+echo "Dencryption completed successfully!"

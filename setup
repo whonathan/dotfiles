@@ -11,7 +11,7 @@ done
 repo_dir=~/repo
 cd "$repo_dir" || exit
 
-git clone https://github.com/whonathan/dotfiles.git
+git clone git@github.com:whonathan/dotfiles.git
 
 paths=(
     ".config/alacritty"
@@ -20,6 +20,8 @@ paths=(
     ".config/hypr"
     ".config/waybar"
     ".config/starship.toml"
+    ".local/bin/encrypt"
+    ".local/bin/decrypt"
     ".local/bin/packer"
     ".local/bin/udf"
 )
