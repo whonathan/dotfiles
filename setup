@@ -16,7 +16,7 @@ git clone git@github.com:whonathan/dotfiles.git
 
 paths=(
     ".config/alacritty"
-    ".config/tmux"
+    ".config/fish"
     ".config/nvim"
     ".config/hypr"
     ".config/waybar"
