@@ -20,6 +20,7 @@ paths=(
     ".config/nvim"
     ".config/hypr"
     ".config/waybar"
+    ".config/wpaperd"
     ".config/starship.toml"
     ".local/bin/encrypt"
     ".local/bin/decrypt"
