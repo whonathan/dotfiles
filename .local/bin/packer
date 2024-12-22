@@ -30,6 +30,7 @@ utils=(
 hyprland=(
     hyprland
     xdg-desktop-portal-hyprland
+    hyprland-qtutils
     polkit-gnome
     brightnessctl
     wl-clipboard

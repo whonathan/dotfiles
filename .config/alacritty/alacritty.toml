@@ -1,6 +1,6 @@
-import = ["/home/x/.config/alacritty/colorscheme.toml"]
+general.import = ["/home/x/.config/alacritty/colorscheme.toml"]
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/fish"
 
 [window]
