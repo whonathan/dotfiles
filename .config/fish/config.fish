@@ -2,14 +2,29 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 source ~/.config/fish/rtr-mac
+source /usr/share/doc/pkgfile/command-not-found.fish
+
+set -x GOPATH $HOME/go
+set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
+set -x LIBVIRT_DEFAULT_URI 'qemu:///system'
 
 set PATH $PATH $HOME/.local/bin
 set PATH $PATH $HOME/.cargo/bin
-set LIBVIRT_DEFAULT_URI 'qemu:///system'
+
+
+set -gx XCURSOR_SIZE 24
 
 set fish_greeting
 fish_vi_key_bindings
 starship init fish | source
+
+function utc
+    set -gx TZ UTC
+end
+
+alias kotlinlatest "curl -s https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-compiler/maven-metadata.xml | grep '<version>' | grep -v 'Beta' | tail -n 1"
+alias agplatest "curl -s https://dl.google.com/android/maven2/com/android/tools/build/gradle/maven-metadata.xml | grep '<version>' | grep -v 'alpha\|beta' | tail -1"
+alias gobuild 'env CGO_ENABLED=1 GOMAXPROCS=(nproc) go build -trimpath -ldflags="-w -s"'
 
 alias ..   'cd ..'
 alias ...  'cd ../..'

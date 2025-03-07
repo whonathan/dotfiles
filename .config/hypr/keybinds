@@ -1,6 +1,7 @@
 $mod            = super
 $wallp          = exec, wpaperd
 $browser        = exec, firefox
+$browser2       = exec, google-chrome-stable --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation
 $term           = exec, alacritty
 $launcher       = exec, wofi --show drun
 $bar            = exec, pkill -SIGUSR1 '^waybar$'
@@ -10,6 +11,13 @@ $audio_up       = exec, pactl set-sink-volume @DEFAULT_SINK@ +2%
 $audio_down     = exec, pactl set-sink-volume @DEFAULT_SINK@ -2%
 $audio_mute     = exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
 $audio_mic_mute = exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+$ss_a_window    = exec, $HOME/.config/hypr/scripts/captureAll.sh
+$ss_a_monitor   = exec, $HOME/.config/hypr/scripts/captureScreen.sh
+$ss_a_region    = exec, $HOME/.config/hypr/scripts/captureArea.sh
+
+bind = $mod, P, $ss_a_window 
+bind = $mod ALT, P, $ss_a_monitor
+bind = $mod SHIFT, P, $ss_a_region
 
 bind = $mod,s,togglegroup
 bind = $modALT, J, changegroupactive, f
@@ -20,7 +28,8 @@ bind = $mod SHIFT, k, movewindoworgroup, u
 bind = $mod SHIFT, j, movewindoworgroup, d
 
 bind	= $mod, w, $wallp
-bind	= $mod, b, $browser
+bind	= $mod, b, $browser2
+bind	= $mod shift, b, $browser
 bind	= $mod, v, exec, code
 bind	= $mod, return, $term
 bind	= $mod, space, $launcher

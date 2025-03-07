@@ -19,7 +19,6 @@ local keymaps = {
     ["<leader>q"] = ":q!<cr>",
     ["<leader>p"] = ":Lazy<cr>",
     ["<leader>p"] = [["+p]],
-  --["<leader>p"] = ":Lazy<cr>",
     ["<leader>e"] = ":lua explorer()<cr>",
     ["<leader>o"] = "o<esc>^Da",
     ["<leader>O"] = "O<esc>^Da",
@@ -67,19 +66,34 @@ local keymaps = {
   },
 }
 
-function explorer()
-    vim.cmd('NvimTreeToggle')
-    vim.cmd('setlocal relativenumber')
-    vim.cmd('setlocal signcolumn=no')
-end
+-- Filetype-specific key mappings
+local filetype_keymaps = {
+  kotlin = {
+    ["<leader>r"] = ":!kotlinc -script %<CR>",
+  },
+}
 
+-- Set general keymaps
 for mode, keys in pairs(keymaps) do
   for key, cmd in pairs(keys) do
     vim.api.nvim_set_keymap(mode, key, cmd, { noremap = true, silent = true })
   end
 end
 
--- i dont know stuff
---set("n", "<C-m>", "<C-i>", opts)
---vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
--- Telescope
+-- Set filetype-specific keymaps
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    local ft = args.match
+    if filetype_keymaps[ft] then
+      for key, cmd in pairs(filetype_keymaps[ft]) do
+        vim.api.nvim_set_keymap("n", key, cmd, { noremap = true, silent = true })
+      end
+    end
+  end,
+})
+
+function explorer()
+    vim.cmd('NvimTreeToggle')
+    vim.cmd('setlocal relativenumber')
+    vim.cmd('setlocal signcolumn=no')
+end

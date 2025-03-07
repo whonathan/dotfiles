@@ -11,11 +11,62 @@ window#waybar {
     background: rgba(0,0,0,0.3);
 }
 
+/* Base styles for modules */
+#workspaces,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#network,
+#pulseaudio,
+#battery,
+#clock,
+#tray {
+    background-color: rgba(0,0,0,1);
+    border-radius: 16px;
+    margin: 5px;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+/* Center module sizes */
+#cpu {
+    min-width: 70px;
+}
+
+#memory {
+    min-width: 70px;
+}
+
+#temperature {
+    min-width: 70px;
+}
+
+#disk {
+    min-width: 70px;
+}
+
+#network {
+    min-width: 70px;
+}
+
+/* Right module sizes */
+#pulseaudio {
+    min-width: 40px;
+}
+
+#battery {
+    min-width: 40px;
+}
+
+#clock {
+    min-width: 70px;
+}
+
+/* Specific module adjustments */
 #workspaces {
-    background: rgba(0,0,0,1);
     margin: 5px 5px 5px 5px;
     padding: 0px 5px 0px 5px;
-    border-radius: 16px;
     border: solid 0px #f4d9e1;
     font-weight: normal;
     font-style: normal;
@@ -33,71 +84,12 @@ window#waybar {
     border-radius: 16px;
 }
 
-
-#cpu {
-    background-color: rgba(0,0,0,1);
-    color: #fff;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-#memory {
-    background-color: rgba(0,0,0,1);
-    color: #fff;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-#temperature {
-    background-color: rgba(0,0,0,1);
-    color: #fff;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-#disk {
-    background-color: rgba(0,0,0,1);
-    color: #fff;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-#network {
-    background-color: rgba(0,0,0,1);
-    color: #fff;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-
+/* Right-side modules specific styles */
 #pulseaudio,
 #battery,
 #clock,
-
 #tray {
-    background: rgba(0,0,0,1);
     margin: 5px 5px 5px 5px;
-    border-radius: 16px;
     padding: 0px 5px;
 }
 
@@ -115,7 +107,6 @@ window#waybar {
     margin-left: 0px;
 }
 
-
 #battery {
     background-color: transparent;
     color: #fff;
@@ -132,7 +123,60 @@ window#waybar {
     padding-right: 1rem;
 }
 
-#clock {
-    background-color: transparent;
-    color: #fff;
+/* State colors for modules */
+#cpu, #memory, #disk, #temperature {
+    color: #a3be8c; /* Default to low color */
+}
+
+/* CPU states */
+#cpu.medium {
+    color: #ebcb8b;
+}
+
+#cpu.high {
+    color: #d08770;
+}
+
+#cpu.critical {
+    color: #bf616a;
+}
+
+/* Memory states */
+#memory.medium {
+    color: #ebcb8b;
+}
+
+#memory.high {
+    color: #d08770;
+}
+
+#memory.critical {
+    color: #bf616a;
+}
+
+/* Disk states */
+#disk.medium {
+    color: #ebcb8b;
+}
+
+#disk.high {
+    color: #d08770;
+}
+
+#disk.critical {
+    color: #bf616a;
+}
+
+/* Temperature states */
+#temperature.medium {
+    color: #ebcb8b;
+}
+
+#temperature.high {
+    color: #d08770;
+}
+
+#temperature.critical {
+    color: #bf616a;
+    background: rgba(191, 97, 106, 0.2);
 }
