@@ -23,6 +23,7 @@ paths=(
     ".config/gtk-3.0"
     ".config/wpaperd"
     ".config/starship.toml"
+    ".config/chromium-flags.conf"
     ".local/bin/encrypt"
     ".local/bin/decrypt"
     ".local/bin/packer"
