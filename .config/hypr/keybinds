@@ -1,7 +1,7 @@
 $mod            = super
 $wallp          = exec, wpaperd
 $browser        = exec, firefox
-$browser2       = exec, google-chrome-stable --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation
+$browser2       = exec, chromium --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation
 $term           = exec, alacritty
 $launcher       = exec, wofi --show drun
 $bar            = exec, pkill -SIGUSR1 '^waybar$'

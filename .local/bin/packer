@@ -1,17 +1,33 @@
 #!/usr/bin/env bash
 
+#utils=(
+#    mesa
+#    vulkan-intel
+#    intel-media-driver
+#    libva-intel-driver
+#    pipewire
+#    pipewire-alsa
+#    pipewire-jack
+#    pipewire-pulse
+#    gst-plugin-pipewire
+#    libpulse
+#    wireplumber
+#    noto-fonts
+#    noto-fonts-emoji
+#    noto-fonts-cjk
+#    ttf-jetbrains-mono-nerd
+#    pacman-contrib
+#    fish
+#    tmux
+#    starship
+#    neovim
+#    man-db
+#    git
+#    eza
+#    duf
+#)
+
 utils=(
-    mesa
-    vulkan-intel
-    intel-media-driver
-    libva-intel-driver
-    pipewire
-    pipewire-alsa
-    pipewire-jack
-    pipewire-pulse
-    gst-plugin-pipewire
-    libpulse
-    wireplumber
     noto-fonts
     noto-fonts-emoji
     noto-fonts-cjk
@@ -25,6 +41,7 @@ utils=(
     git
     eza
     duf
+    pkgfile
 )
 
 hyprland=(
@@ -44,6 +61,9 @@ hyprland=(
     waybar
     wofi
     firefox
+    chromium
+    wpaperd
+    gtk4
 )
 
 vm=(
