@@ -2,6 +2,7 @@
 windowrulev2 = workspace 1, class:^(Alacritty)$
 windowrulev2 = workspace 2, class:^(Code)$
 windowrulev2 = workspace 10, class:^(firefox)$
+windowrulev2 = workspace 10, class:^(chromium)$
 windowrulev2 = float, class:^(quickgui)$
 
 workspace = w[t1], gapsout:0, gapsin:0
